@@ -4,7 +4,7 @@
 #set -e
 set -x
 
-cd "$(dirname "$0")/.."
+#cd "$(dirname "$0")/.."
 
 echo  "Authentication=VncAuth" | sudo tee -a  /etc/vnc/config.d/common.custom
 
