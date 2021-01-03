@@ -20,7 +20,7 @@ sudo apt install php libapache2-mod-php -y
 echo " VNC"
 sudo vncpasswd -service
 # sudo systemctl start vncserver-x11-serviced.service
-# sudo systemctl enable vncserver-x11-serviced.service
+sudo systemctl enable vncserver-x11-serviced.service
 sudo systemctl restart vncserver-x11-serviced
 
 # We have a script "listen-for-shutdown.py", which will shutdown the PI when triggered by a switch.  
