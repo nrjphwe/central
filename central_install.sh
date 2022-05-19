@@ -11,10 +11,16 @@ echo  "Authentication=VncAuth" | sudo tee -a  /etc/vnc/config.d/common.custom
 echo "=> Installing apache...\n"
 sudo apt update
 sudo apt install apache2 -y
+sudo chown -R www-data:www-data /var/www/
+sudo chmod -R 775 /var/www/html/
+sudo usermod -a -G www-data pi
 sudo a2enmod cgi
 
 echo "=> Installing PHP...\n"
-sudo apt install php libapache2-mod-php -y
+sudo apt install php php-mbstring
+#sudo apt install php libapache2-mod-php -y
+sudo -u www-data touch /var/www/html/index.php
+echo "<?php phpinfo ();?>" > /var/www/html/index.php
 
 # start upp VNC
 echo " VNC"
