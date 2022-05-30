@@ -18,7 +18,7 @@ echo "=> Installing PHP...\n"
 sudo apt install php php-mbstring
 #sudo apt install php libapache2-mod-php -y
 sudo -u www-data touch /var/www/html/index.php
-echo "<?php phpinfo ();?>" > /var/www/html/index.php
+echo "<?php phpinfo ();?>" |  sudo tee -a /var/www/html/index.php
 
 # start upp VNC
 echo " VNC"
